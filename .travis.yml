@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t izolotarev/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run izolotarev/docker-react npm run test -- --coverage
