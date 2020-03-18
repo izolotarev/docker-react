@@ -5,5 +5,6 @@ services:
 before_install:
   - docker build -t izolotarev/docker-react -f Dockerfile.dev .
 
+# -e CI=true
 script:
-  - docker run izolotarev/docker-react npm run test -- --coverage
+  - docker run -e CI=true izolotarev/docker-react npm run test -- --coverage
